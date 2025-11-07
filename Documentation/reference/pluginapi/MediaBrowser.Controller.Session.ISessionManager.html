@@ -388,6 +388,162 @@
   </table>
   
   
+  <a id="MediaBrowser_Controller_Session_ISessionManager_CreateParty_" data-uid="MediaBrowser.Controller.Session.ISessionManager.CreateParty*"></a>
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_CreateParty_MediaBrowser_Controller_Session_SessionInfo_System_String_" data-uid="MediaBrowser.Controller.Session.ISessionManager.CreateParty(MediaBrowser.Controller.Session.SessionInfo,System.String)">CreateParty(SessionInfo, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PartyInfoResult CreateParty(SessionInfo sessionInfo, string partyName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.SessionInfo.html">SessionInfo</a></td>
+        <td><span class="parametername">sessionInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">partyName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.PartyInfoResult.html">PartyInfoResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MediaBrowser_Controller_Session_ISessionManager_GetParties_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetParties*"></a>
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_GetParties" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetParties">GetParties()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">QueryResult&lt;PartyInfo&gt; GetParties()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Model.Querying.QueryResult-1.html">QueryResult</a>&lt;<a class="xref" href="MediaBrowser.Controller.Session.PartyInfo.html">PartyInfo</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MediaBrowser_Controller_Session_ISessionManager_GetPartyInfo_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetPartyInfo*"></a>
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_GetPartyInfo_MediaBrowser_Controller_Session_SessionInfo_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetPartyInfo(MediaBrowser.Controller.Session.SessionInfo)">GetPartyInfo(SessionInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PartyInfoResult GetPartyInfo(SessionInfo sessionInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.SessionInfo.html">SessionInfo</a></td>
+        <td><span class="parametername">sessionInfo</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.PartyInfoResult.html">PartyInfoResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MediaBrowser_Controller_Session_ISessionManager_GetPartyInfo_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetPartyInfo*"></a>
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_GetPartyInfo_System_String_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetPartyInfo(System.String)">GetPartyInfo(String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PartyInfoResult GetPartyInfo(string partyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">partyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.PartyInfoResult.html">PartyInfoResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <a id="MediaBrowser_Controller_Session_ISessionManager_GetSession_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetSession*"></a>
   <h4 id="MediaBrowser_Controller_Session_ISessionManager_GetSession_System_String_System_String_System_String_" data-uid="MediaBrowser.Controller.Session.ISessionManager.GetSession(System.String,System.String,System.String)">GetSession(String, String, String)</h4>
   <div class="markdown level1 summary"><p>Gets the session.</p>
@@ -570,6 +726,80 @@
         <td><a class="xref" href="MediaBrowser.Controller.Session.SessionInfo.html">SessionInfo</a></td>
         <td><p>SessionInfo.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MediaBrowser_Controller_Session_ISessionManager_JoinParty_" data-uid="MediaBrowser.Controller.Session.ISessionManager.JoinParty*"></a>
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_JoinParty_MediaBrowser_Controller_Session_SessionInfo_System_String_" data-uid="MediaBrowser.Controller.Session.ISessionManager.JoinParty(MediaBrowser.Controller.Session.SessionInfo,System.String)">JoinParty(SessionInfo, String)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">PartyInfoResult JoinParty(SessionInfo sessionInfo, string partyId)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.SessionInfo.html">SessionInfo</a></td>
+        <td><span class="parametername">sessionInfo</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">System.String</span></td>
+        <td><span class="parametername">partyId</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.PartyInfoResult.html">PartyInfoResult</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="MediaBrowser_Controller_Session_ISessionManager_LeaveParty_" data-uid="MediaBrowser.Controller.Session.ISessionManager.LeaveParty*"></a>
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_LeaveParty_MediaBrowser_Controller_Session_SessionInfo_" data-uid="MediaBrowser.Controller.Session.ISessionManager.LeaveParty(MediaBrowser.Controller.Session.SessionInfo)">LeaveParty(SessionInfo)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void LeaveParty(SessionInfo sessionInfo)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="MediaBrowser.Controller.Session.SessionInfo.html">SessionInfo</a></td>
+        <td><span class="parametername">sessionInfo</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -2437,6 +2667,30 @@
   </h3>
   
   
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_AddedToParty" data-uid="MediaBrowser.Controller.Session.ISessionManager.AddedToParty">AddedToParty</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;PartyEventArgs&gt; AddedToParty</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="MediaBrowser.Controller.Session.PartyEventArgs.html">PartyEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
   <h4 id="MediaBrowser_Controller_Session_ISessionManager_AuthenticationFailed" data-uid="MediaBrowser.Controller.Session.ISessionManager.AuthenticationFailed">AuthenticationFailed</h4>
   <div class="markdown level1 summary"><p>Occurs when [authentication failed].</p>
 </div>
@@ -2605,6 +2859,30 @@
     <tbody>
       <tr>
         <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="MediaBrowser.Controller.Session.SessionEventArgs.html">SessionEventArgs</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <h4 id="MediaBrowser_Controller_Session_ISessionManager_RemovedFromParty" data-uid="MediaBrowser.Controller.Session.ISessionManager.RemovedFromParty">RemovedFromParty</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">event EventHandler&lt;PartyEventArgs&gt; RemovedFromParty</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="MediaBrowser.Controller.Session.PartyEventArgs.html">PartyEventArgs</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>

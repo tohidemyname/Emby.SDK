@@ -8,7 +8,7 @@
       "name": "Emby Developer Forum",
       "url": "https://emby.media/community/index.php?/forum/47-developer-api"
     },
-    "version": "4.9.1.80"
+    "version": "4.9.1.90"
   },
   "host": "emby.media",
   "basePath": "/emby",
@@ -8395,6 +8395,90 @@
         "x-RequiredAuthentication": "Requires authentication as user"
       },
       "x-summary": "Gets available packages"
+    },
+    "/Parties": {
+      "get": {
+        "tags": [
+          "PartyService"
+        ],
+        "summary": "Gets a list of active parties",
+        "description": "Requires authentication as user",
+        "operationId": "getParties",
+        "responses": {
+          "200": {
+            "description": "Operation successful. Response content unknown."
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "security": [
+          {
+            "apikeyauth": [ ]
+          },
+          {
+            "embyauth": [ ]
+          }
+        ],
+        "x-RequiredAuthentication": "Requires authentication as user"
+      },
+      "post": {
+        "tags": [
+          "PartyService"
+        ],
+        "summary": "Creates a party",
+        "description": "Requires authentication as user",
+        "operationId": "postParties",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation successful. Returning a PartyInfoResult object.",
+            "schema": {
+              "$ref": "#/definitions/Session.PartyInfoResult"
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "security": [
+          {
+            "apikeyauth": [ ]
+          },
+          {
+            "embyauth": [ ]
+          }
+        ],
+        "x-RequiredAuthentication": "Requires authentication as user"
+      },
+      "x-summary": "Gets a list of active parties"
     },
     "/Persons": {
       "get": {
@@ -26932,6 +27016,93 @@
       },
       "x-summary": "Gets a package, by name or assembly guid"
     },
+    "/Parties/Info": {
+      "get": {
+        "tags": [
+          "PartyService"
+        ],
+        "summary": "Gets info about the session's current party",
+        "description": "Requires authentication as user",
+        "operationId": "getPartiesInfo",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation successful. Returning a PartyInfoResult object.",
+            "schema": {
+              "$ref": "#/definitions/Session.PartyInfoResult"
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "security": [
+          {
+            "apikeyauth": [ ]
+          },
+          {
+            "embyauth": [ ]
+          }
+        ],
+        "x-RequiredAuthentication": "Requires authentication as user"
+      },
+      "x-summary": "Gets info about the session's current party"
+    },
+    "/Parties/Leave": {
+      "post": {
+        "tags": [
+          "PartyService"
+        ],
+        "summary": "Leaves a party",
+        "description": "Requires authentication as user",
+        "operationId": "postPartiesLeave",
+        "responses": {
+          "200": {
+            "description": "Operation successful. Empty response."
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "security": [
+          {
+            "apikeyauth": [ ]
+          },
+          {
+            "embyauth": [ ]
+          }
+        ],
+        "x-RequiredAuthentication": "Requires authentication as user"
+      },
+      "x-summary": "Leaves a party"
+    },
     "/Persons/{Name}": {
       "get": {
         "tags": [
@@ -41495,6 +41666,12 @@
             "name": "IncludeAllLanguages",
             "description": "Optional.",
             "type": "boolean"
+          },
+          {
+            "in": "query",
+            "name": "EnableSeriesImages",
+            "description": "Optional.",
+            "type": "boolean"
           }
         ],
         "responses": {
@@ -47013,6 +47190,62 @@
         "x-RequiredAuthentication": "Requires authentication as administrator"
       },
       "x-summary": "Cancels a package installation"
+    },
+    "/Parties/{Id}/Join": {
+      "post": {
+        "tags": [
+          "PartyService"
+        ],
+        "summary": "Joins a party",
+        "description": "Requires authentication as user",
+        "operationId": "postPartiesByIdJoin",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Id",
+            "description": "Name",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Operation successful. Returning a PartyInfoResult object.",
+            "schema": {
+              "$ref": "#/definitions/Session.PartyInfoResult"
+            }
+          },
+          "400": {
+            "$ref": "#/responses/400"
+          },
+          "401": {
+            "$ref": "#/responses/401"
+          },
+          "403": {
+            "$ref": "#/responses/403"
+          },
+          "404": {
+            "$ref": "#/responses/404"
+          },
+          "500": {
+            "$ref": "#/responses/500"
+          }
+        },
+        "security": [
+          {
+            "apikeyauth": [ ]
+          },
+          {
+            "embyauth": [ ]
+          }
+        ],
+        "x-RequiredAuthentication": "Requires authentication as user"
+      },
+      "x-summary": "Joins a party"
     },
     "/Playlists/{Id}/AddToPlaylistInfo": {
       "get": {
@@ -59760,46 +59993,6 @@
         "x-RequiredAuthentication": "Requires authentication as user"
       },
       "x-summary": "Gets a live tv channel"
-    },
-    "/LiveTv/ListingProviders/SchedulesDirect/Countries": {
-      "get": {
-        "tags": [
-          "LiveTvService"
-        ],
-        "summary": "Gets available lineups",
-        "description": "Requires authentication as administrator",
-        "operationId": "getLivetvListingprovidersSchedulesdirectCountries",
-        "responses": {
-          "200": {
-            "description": "Operation successful. Response content unknown."
-          },
-          "400": {
-            "$ref": "#/responses/400"
-          },
-          "401": {
-            "$ref": "#/responses/401"
-          },
-          "403": {
-            "$ref": "#/responses/403"
-          },
-          "404": {
-            "$ref": "#/responses/404"
-          },
-          "500": {
-            "$ref": "#/responses/500"
-          }
-        },
-        "security": [
-          {
-            "apikeyauth": [ ]
-          },
-          {
-            "embyauth": [ ]
-          }
-        ],
-        "x-RequiredAuthentication": "Requires authentication as administrator"
-      },
-      "x-summary": "Gets available lineups"
     },
     "/LiveTv/TunerHosts/Default/{Type}": {
       "get": {
@@ -72988,204 +73181,38 @@
       "type": "string",
       "x-internal-ref-name": "MediaBrowser.Model.Updates.PackageVersionClass"
     },
-    "Playlists.PlaylistCreationResult": {
+    "Session.PartyInfoResult": {
       "type": "object",
       "properties": {
-        "Id": {
-          "type": "string"
-        },
-        "Name": {
-          "type": "string"
-        },
-        "ItemAddedCount": {
-          "format": "int32",
-          "type": "integer"
+        "PartyInfo": {
+          "$ref": "#/definitions/Session.PartyInfo"
         }
       },
-      "x-internal-ref-name": "MediaBrowser.Controller.Playlists.PlaylistCreationResult"
+      "x-internal-ref-name": "MediaBrowser.Controller.Session.PartyInfoResult"
     },
-    "Plugins.PluginInfo": {
-      "description": "This is a serializable stub class that is used by the api to provide information about installed plugins.\r\n",
+    "Session.PartyInfo": {
       "type": "object",
       "properties": {
-        "Name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "Version": {
-          "description": "The version.",
-          "type": "string"
-        },
-        "ConfigurationFileName": {
-          "description": "The name of the configuration file.",
-          "type": "string"
-        },
-        "Description": {
-          "description": "The description.",
-          "type": "string"
-        },
         "Id": {
-          "description": "The unique id.",
           "type": "string"
         },
-        "ImageTag": {
-          "description": "The image URL.",
-          "type": "string"
-        }
-      },
-      "x-internal-ref-name": "MediaBrowser.Model.Plugins.PluginInfo"
-    },
-    "TaskInfo": {
-      "description": "Class TaskInfo\r\n",
-      "type": "object",
-      "properties": {
         "Name": {
-          "description": "The name.",
           "type": "string"
         },
-        "State": {
-          "$ref": "#/definitions/TaskState"
-        },
-        "CurrentProgressPercentage": {
-          "format": "double",
-          "description": "The progress.",
-          "type": "number"
-        },
-        "Id": {
-          "description": "The id.",
-          "type": "string"
-        },
-        "LastExecutionResult": {
-          "$ref": "#/definitions/TaskResult"
-        },
-        "Triggers": {
-          "description": "The triggers.",
+        "Sessions": {
           "type": "array",
           "items": {
-            "$ref": "#/definitions/TaskTriggerInfo"
+            "$ref": "#/definitions/Session.SessionInfo"
           }
         },
-        "Description": {
-          "description": "The description.",
-          "type": "string"
-        },
-        "Category": {
-          "description": "The category.",
-          "type": "string"
-        },
-        "IsHidden": {
-          "description": "A value indicating whether this instance is hidden.",
-          "type": "boolean"
-        },
-        "Key": {
-          "description": "The key.",
-          "type": "string"
+        "Users": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Entities.User"
+          }
         }
       },
-      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskInfo"
-    },
-    "TaskState": {
-      "description": "Enum TaskState\r\n",
-      "enum": [
-        "Idle",
-        "Cancelling",
-        "Running"
-      ],
-      "type": "string",
-      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskState"
-    },
-    "TaskResult": {
-      "description": "Class TaskExecutionInfo\r\n",
-      "type": "object",
-      "properties": {
-        "StartTimeUtc": {
-          "format": "date-time",
-          "description": "The start time UTC.",
-          "type": "string"
-        },
-        "EndTimeUtc": {
-          "format": "date-time",
-          "description": "The end time UTC.",
-          "type": "string"
-        },
-        "Status": {
-          "$ref": "#/definitions/TaskCompletionStatus"
-        },
-        "Name": {
-          "description": "The name.",
-          "type": "string"
-        },
-        "Key": {
-          "description": "The key.",
-          "type": "string"
-        },
-        "Id": {
-          "description": "The id.",
-          "type": "string"
-        },
-        "ErrorMessage": {
-          "description": "The error message.",
-          "type": "string"
-        },
-        "LongErrorMessage": {
-          "description": "The long error message.",
-          "type": "string"
-        }
-      },
-      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskResult"
-    },
-    "TaskCompletionStatus": {
-      "description": "Enum TaskCompletionStatus\r\n",
-      "enum": [
-        "Completed",
-        "Failed",
-        "Cancelled",
-        "Aborted"
-      ],
-      "type": "string",
-      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskCompletionStatus"
-    },
-    "TaskTriggerInfo": {
-      "description": "Class TaskTriggerInfo\r\n",
-      "type": "object",
-      "properties": {
-        "Type": {
-          "description": "The type.",
-          "type": "string"
-        },
-        "TimeOfDayTicks": {
-          "format": "int64",
-          "description": "The time of day.",
-          "type": "integer"
-        },
-        "IntervalTicks": {
-          "format": "int64",
-          "description": "The interval.",
-          "type": "integer"
-        },
-        "SystemEvent": {
-          "$ref": "#/definitions/SystemEvent"
-        },
-        "DayOfWeek": {
-          "$ref": "#/definitions/DayOfWeek"
-        },
-        "MaxRuntimeTicks": {
-          "format": "int64",
-          "description": "The maximum runtime ticks.",
-          "type": "integer"
-        }
-      },
-      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskTriggerInfo"
-    },
-    "SystemEvent": {
-      "description": "Enum SystemEvent\r\n",
-      "enum": [
-        "WakeFromSleep",
-        "DisplayConfigurationChange",
-        "NetworkChange"
-      ],
-      "type": "string",
-      "x-internal-ref-name": "MediaBrowser.Model.Tasks.SystemEvent"
+      "x-internal-ref-name": "MediaBrowser.Controller.Session.PartyInfo"
     },
     "Session.SessionInfo": {
       "description": "Class SessionInfo\r\n",
@@ -73717,6 +73744,125 @@
       "type": "string",
       "x-internal-ref-name": "MediaBrowser.Model.Session.Transcoding.VpStepTypes"
     },
+    "Entities.User": {
+      "description": "Class User\r\n",
+      "type": "object",
+      "properties": {
+        "UsesIdForConfigurationPath": {
+          "description": "From now on all user paths will be Id\\-based. This is for backwards compatibility.",
+          "type": "boolean"
+        },
+        "Password": {
+          "description": "The password.",
+          "type": "string"
+        },
+        "EasyPassword": {
+          "type": "string"
+        },
+        "Salt": {
+          "type": "string"
+        },
+        "ConnectUserName": {
+          "type": "string"
+        },
+        "ConnectUserId": {
+          "type": "string"
+        },
+        "ConnectLinkType": {
+          "$ref": "#/definitions/Connect.UserLinkType"
+        },
+        "ConnectAccessKey": {
+          "type": "string"
+        },
+        "ImageInfos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Entities.ItemImageInfo"
+          }
+        },
+        "Name": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "LastLoginDate": {
+          "format": "date-time",
+          "description": "The last login date.",
+          "type": "string"
+        },
+        "LastActivityDate": {
+          "format": "date-time",
+          "description": "The last activity date.",
+          "type": "string"
+        },
+        "PlayedPercentage": {
+          "format": "double",
+          "type": "number"
+        },
+        "RecursiveChildCountEqualsChildCount": {
+          "type": "boolean"
+        },
+        "OriginalParsedName": {
+          "description": "Internal use only",
+          "type": "string"
+        },
+        "IsNameParsedFromFolder": {
+          "description": "Internal use only",
+          "type": "boolean"
+        },
+        "DateCreated": {
+          "format": "date-time",
+          "description": "The date created.",
+          "type": "string"
+        },
+        "ImportedCollections": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/LinkedItemInfo"
+          }
+        },
+        "ResolvedPresentationUniqueKey": {
+          "type": "string"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Controller.Entities.User"
+    },
+    "Connect.UserLinkType": {
+      "enum": [
+        "LinkedUser",
+        "Guest"
+      ],
+      "type": "string",
+      "x-internal-ref-name": "MediaBrowser.Model.Connect.UserLinkType"
+    },
+    "Entities.ItemImageInfo": {
+      "type": "object",
+      "properties": {
+        "Path": {
+          "description": "The path.",
+          "type": "string"
+        },
+        "Type": {
+          "$ref": "#/definitions/ImageType"
+        },
+        "Orientation": {
+          "$ref": "#/definitions/Drawing.ImageOrientation"
+        },
+        "DateModified": {
+          "format": "date-time",
+          "description": "The date modified.",
+          "type": "string"
+        },
+        "Width": {
+          "format": "int32",
+          "type": "integer"
+        },
+        "Height": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Controller.Entities.ItemImageInfo"
+    },
     "ImageType": {
       "description": "Enum ImageType\r\n",
       "enum": [
@@ -73738,6 +73884,223 @@
       ],
       "type": "string",
       "x-internal-ref-name": "MediaBrowser.Model.Entities.ImageType"
+    },
+    "LinkedItemInfo": {
+      "type": "object",
+      "properties": {
+        "ProviderIds": {
+          "$ref": "#/definitions/ProviderIdDictionary"
+        },
+        "Name": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "Id": {
+          "format": "int64",
+          "description": "The identifier.",
+          "type": "integer"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Model.Dto.LinkedItemInfo"
+    },
+    "Playlists.PlaylistCreationResult": {
+      "type": "object",
+      "properties": {
+        "Id": {
+          "type": "string"
+        },
+        "Name": {
+          "type": "string"
+        },
+        "ItemAddedCount": {
+          "format": "int32",
+          "type": "integer"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Controller.Playlists.PlaylistCreationResult"
+    },
+    "Plugins.PluginInfo": {
+      "description": "This is a serializable stub class that is used by the api to provide information about installed plugins.\r\n",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "Version": {
+          "description": "The version.",
+          "type": "string"
+        },
+        "ConfigurationFileName": {
+          "description": "The name of the configuration file.",
+          "type": "string"
+        },
+        "Description": {
+          "description": "The description.",
+          "type": "string"
+        },
+        "Id": {
+          "description": "The unique id.",
+          "type": "string"
+        },
+        "ImageTag": {
+          "description": "The image URL.",
+          "type": "string"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Model.Plugins.PluginInfo"
+    },
+    "TaskInfo": {
+      "description": "Class TaskInfo\r\n",
+      "type": "object",
+      "properties": {
+        "Name": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "State": {
+          "$ref": "#/definitions/TaskState"
+        },
+        "CurrentProgressPercentage": {
+          "format": "double",
+          "description": "The progress.",
+          "type": "number"
+        },
+        "Id": {
+          "description": "The id.",
+          "type": "string"
+        },
+        "LastExecutionResult": {
+          "$ref": "#/definitions/TaskResult"
+        },
+        "Triggers": {
+          "description": "The triggers.",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/TaskTriggerInfo"
+          }
+        },
+        "Description": {
+          "description": "The description.",
+          "type": "string"
+        },
+        "Category": {
+          "description": "The category.",
+          "type": "string"
+        },
+        "IsHidden": {
+          "description": "A value indicating whether this instance is hidden.",
+          "type": "boolean"
+        },
+        "Key": {
+          "description": "The key.",
+          "type": "string"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskInfo"
+    },
+    "TaskState": {
+      "description": "Enum TaskState\r\n",
+      "enum": [
+        "Idle",
+        "Cancelling",
+        "Running"
+      ],
+      "type": "string",
+      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskState"
+    },
+    "TaskResult": {
+      "description": "Class TaskExecutionInfo\r\n",
+      "type": "object",
+      "properties": {
+        "StartTimeUtc": {
+          "format": "date-time",
+          "description": "The start time UTC.",
+          "type": "string"
+        },
+        "EndTimeUtc": {
+          "format": "date-time",
+          "description": "The end time UTC.",
+          "type": "string"
+        },
+        "Status": {
+          "$ref": "#/definitions/TaskCompletionStatus"
+        },
+        "Name": {
+          "description": "The name.",
+          "type": "string"
+        },
+        "Key": {
+          "description": "The key.",
+          "type": "string"
+        },
+        "Id": {
+          "description": "The id.",
+          "type": "string"
+        },
+        "ErrorMessage": {
+          "description": "The error message.",
+          "type": "string"
+        },
+        "LongErrorMessage": {
+          "description": "The long error message.",
+          "type": "string"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskResult"
+    },
+    "TaskCompletionStatus": {
+      "description": "Enum TaskCompletionStatus\r\n",
+      "enum": [
+        "Completed",
+        "Failed",
+        "Cancelled",
+        "Aborted"
+      ],
+      "type": "string",
+      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskCompletionStatus"
+    },
+    "TaskTriggerInfo": {
+      "description": "Class TaskTriggerInfo\r\n",
+      "type": "object",
+      "properties": {
+        "Type": {
+          "description": "The type.",
+          "type": "string"
+        },
+        "TimeOfDayTicks": {
+          "format": "int64",
+          "description": "The time of day.",
+          "type": "integer"
+        },
+        "IntervalTicks": {
+          "format": "int64",
+          "description": "The interval.",
+          "type": "integer"
+        },
+        "SystemEvent": {
+          "$ref": "#/definitions/SystemEvent"
+        },
+        "DayOfWeek": {
+          "$ref": "#/definitions/DayOfWeek"
+        },
+        "MaxRuntimeTicks": {
+          "format": "int64",
+          "description": "The maximum runtime ticks.",
+          "type": "integer"
+        }
+      },
+      "x-internal-ref-name": "MediaBrowser.Model.Tasks.TaskTriggerInfo"
+    },
+    "SystemEvent": {
+      "description": "Enum SystemEvent\r\n",
+      "enum": [
+        "WakeFromSleep",
+        "DisplayConfigurationChange",
+        "NetworkChange"
+      ],
+      "type": "string",
+      "x-internal-ref-name": "MediaBrowser.Model.Tasks.SystemEvent"
     },
     "NameValuePair": {
       "type": "object",
@@ -78138,22 +78501,11 @@
           "description": "The primary image aspect ratio.",
           "type": "number"
         },
-        "HasConfiguredEasyPassword": {
-          "type": "boolean"
-        },
         "UserItemShareLevel": {
           "$ref": "#/definitions/UserItemShareLevel"
         }
       },
       "x-internal-ref-name": "MediaBrowser.Model.Dto.UserDto"
-    },
-    "Connect.UserLinkType": {
-      "enum": [
-        "LinkedUser",
-        "Guest"
-      ],
-      "type": "string",
-      "x-internal-ref-name": "MediaBrowser.Model.Connect.UserLinkType"
     },
     "UserConfiguration": {
       "description": "Class UserConfiguration\r\n",
@@ -82125,6 +82477,13 @@
       "externalDocs": {
         "description": "API Reference: PackageService",
         "url": "https://betadev.emby.media/reference/RestAPI/PackageService.html"
+      }
+    },
+    {
+      "name": "PartyService",
+      "externalDocs": {
+        "description": "API Reference: PartyService",
+        "url": "https://betadev.emby.media/reference/RestAPI/PartyService.html"
       }
     },
     {

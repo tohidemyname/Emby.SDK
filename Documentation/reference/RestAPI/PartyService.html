@@ -5,11 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Class PartyInfo
-   </title>
+    <title>PartyService </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Class PartyInfo
-   ">
+    <meta name="title" content="PartyService ">
     <meta name="generator" content="docfx 2.59.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -23,7 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta property="docfx:navrel" content="../../toc.html">
     <meta property="docfx:tocrel" content="../toc.html">
-    <meta property="docfx:uid" content="MediaBrowser.Model.Session.PartyInfo">
+    <meta property="docfx:uid" content="emby.restapi/tag/PartyService">
     
     <meta property="docfx:rel" content="../../">
     
@@ -147,81 +145,46 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="MediaBrowser.Model.Session.PartyInfo">
+            <article class="content wrap" id="_content" data-uid="emby.restapi/tag/PartyService">
 <div class="refdoc">
-  
-  
-  <h1 id="MediaBrowser_Model_Session_PartyInfo" data-uid="MediaBrowser.Model.Session.PartyInfo" class="text-break">Class PartyInfo
-  </h1>
-  <div class="markdown level0 summary"></div>
-  <div class="markdown level0 conceptual"></div>
-  <div class="inheritance">
-    <h5>Inheritance</h5>
-    <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><span class="xref">PartyInfo</span></div>
-  </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="MediaBrowser.Model.Session.html">MediaBrowser.Model.Session</a></h6>
-  <h6><strong>Assembly</strong>: MediaBrowser.Model.dll</h6>
-  <h5 id="MediaBrowser_Model_Session_PartyInfo_syntax">Syntax</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class PartyInfo</code></pre>
-  </div>
-  <h3 id="properties">Properties
-  </h3>
-  
-  
-  <a id="MediaBrowser_Model_Session_PartyInfo_Id_" data-uid="MediaBrowser.Model.Session.PartyInfo.Id*"></a>
-  <h4 id="MediaBrowser_Model_Session_PartyInfo_Id" data-uid="MediaBrowser.Model.Session.PartyInfo.Id">Id</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Id { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  
-  
-  <a id="MediaBrowser_Model_Session_PartyInfo_Name_" data-uid="MediaBrowser.Model.Session.PartyInfo.Name*"></a>
-  <h4 id="MediaBrowser_Model_Session_PartyInfo_Name" data-uid="MediaBrowser.Model.Session.PartyInfo.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="extensionmethods">Extension Methods</h3>
-  <div>
-      <a class="xref" href="Emby.Media.Common.Extensions.Extensions.html#Emby_Media_Common_Extensions_Extensions_JsonClone__1___0_MediaBrowser_Model_Serialization_IJsonSerializer_">Extensions.JsonClone&lt;T&gt;(T, IJsonSerializer)</a>
-  </div>
+
+<h1 id="emby_restapi_tag_PartyService" data-uid="emby.restapi/tag/PartyService" class="text-capitalize text-break">PartyService</h1>
+
+
+<a href="https://betadev.emby.media/reference/RestAPI/PartyService.html" class=""><p>API Reference: PartyService</p>
+</a>
+
+ <a class="xref" href="PartyService/getParties.html"><h3 id="emby_restapi_tag_PartyService" data-uid="emby.restapi/getParties/operationlistitem" class="text-capitalize">getParties</h3></a>
+<div class="codewrapper">
+  <pre><code class="lang-restApi hljs"><span class="opspan opspan-get">get</span> /Parties</code></pre>
+</div>
+<div class="markdown level1 summary"><p>Gets a list of active parties</p>
+</div>
+ <a class="xref" href="PartyService/getPartiesInfo.html"><h3 id="emby_restapi_tag_PartyService" data-uid="emby.restapi/getPartiesInfo/operationlistitem" class="text-capitalize">getPartiesInfo</h3></a>
+<div class="codewrapper">
+  <pre><code class="lang-restApi hljs"><span class="opspan opspan-get">get</span> /Parties/Info</code></pre>
+</div>
+<div class="markdown level1 summary"><p>Gets info about the session's current party</p>
+</div>
+ <a class="xref" href="PartyService/postParties.html"><h3 id="emby_restapi_tag_PartyService" data-uid="emby.restapi/postParties/operationlistitem" class="text-capitalize">postParties</h3></a>
+<div class="codewrapper">
+  <pre><code class="lang-restApi hljs"><span class="opspan opspan-post">post</span> /Parties</code></pre>
+</div>
+<div class="markdown level1 summary"><p>Creates a party</p>
+</div>
+ <a class="xref" href="PartyService/postPartiesByIdJoin.html"><h3 id="emby_restapi_tag_PartyService" data-uid="emby.restapi/postPartiesByIdJoin/operationlistitem" class="text-capitalize">postPartiesByIdJoin</h3></a>
+<div class="codewrapper">
+  <pre><code class="lang-restApi hljs"><span class="opspan opspan-post">post</span> /Parties/{Id}/Join</code></pre>
+</div>
+<div class="markdown level1 summary"><p>Joins a party</p>
+</div>
+ <a class="xref" href="PartyService/postPartiesLeave.html"><h3 id="emby_restapi_tag_PartyService" data-uid="emby.restapi/postPartiesLeave/operationlistitem" class="text-capitalize">postPartiesLeave</h3></a>
+<div class="codewrapper">
+  <pre><code class="lang-restApi hljs"><span class="opspan opspan-post">post</span> /Parties/Leave</code></pre>
+</div>
+<div class="markdown level1 summary"><p>Leaves a party</p>
+</div>
+
 </div>
 </article>
           </div>
